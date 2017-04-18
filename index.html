@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head> 
+<body>
+	<div id="box">
+	  <div id="header" >
+	  
+	  </div>
+	  <div id="container"> 
+
+		<div id="kiri">
+<h1 bgcolor="#Darkturquoise" style="color:darkblue;font-family:Baskerville Old Face; font-size:50px;">Cuaca di Kampus UNISBANK</h1>
+
+
+
+
+
+<h4>UNIVERSITAS STIKUBANK</h4>
+
+<div id ="weather"></div>
+	<p>Temperature: <span id="temp"><span><p>
+	<p>Wind Speed: <span id="wind"><span><p>
+
+<script>
+var weather = new XMLHttpRequest();
+weather.open("GET","http://api.wunderground.com/api/c1d6914e5e703f78/conditions/q/ID/Mugassari.json", false);
+weather.send(null);
+
+var r = JSON.parse(weather.response);
+var weather = "Current location: "+ r.current_observation.display_location.full + "<br />";
+var temp = r.current_observation.temperature_string + "<br />";
+var wind = r.current_observation.wind_string + "<br />";
+
+document.getElementById("weather").innerHTML = weather;
+document.getElementById("temp").innerHTML = temp;
+document.getElementById("wind").innerHTML = wind;
+
+</script>
+
+<script>
+var weather = new XMLHttpRequest();
+weather.open("GET","http://api.wunderground.com/api/c1d6914e5e703f78/conditions/q/ID/Mugassari.json", false);
+weather.send(null);
+
+var r = JSON.parse(weather.response);
+var weather = "Current location: "+ r.current_observation.display_location.full + "<br />";
+var temp = r.current_observation.temperature_string + "<br />";
+var wind = r.current_observation.wind_string + "<br />";
+
+document.getElementById("weather").innerHTML = weather;
+document.getElementById("temp").innerHTML = temp;
+document.getElementById("wind").innerHTML = wind;
+
+</script>	
+<br>
+
+</br>
+
+<div id ="weather"></div>
+	<p>Temperature: <span id="temp"><span><p>
+	<p>Wind Speed: <span id="wind"><span><p>
+
+
+
+
+			</div>
+		<div class="clear"></div>
+	  </div> 
+	  <div id="footer">
+		<div id="copyright">
+		<b style="font-family:Baskerville Old Face; font-size:20px;">Nama  :  Yordan Famelio Muhammad  NIM  :  15.01.53.0137   Mata Kuliah : Web Service</b></div> 
+		<div id="copyright">Copyright@2016 by yordan</div> 
+	  </div>
+	</div>
+</body> 
+</html>
